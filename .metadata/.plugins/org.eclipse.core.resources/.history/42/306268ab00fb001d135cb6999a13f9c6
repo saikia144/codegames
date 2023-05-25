@@ -1,0 +1,24 @@
+package com.sol;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int nearest = 0;
+		int[] arr = new int[n];
+		for(int i=0;i<n;i++) {
+			int t = in.nextInt();
+			if(t<0){t = 0-t;}
+            arr[i] = t;
+		}
+		int[] arr_c = Arrays.copyOf(arr, n);
+		for(int i: arr_c) {
+			System.out.println(i);
+		}
+	}
+
+}

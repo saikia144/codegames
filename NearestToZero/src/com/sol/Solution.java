@@ -1,0 +1,38 @@
+package com.sol;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Enter the number of temperatures: ");
+	        int n = scanner.nextInt();
+
+	        int closestTemp = Integer.MAX_VALUE;
+	        for (int i = 0; i < n; i++) {
+	            System.out.print("Enter temperature " + (i + 1) + ": ");
+	            int temp = scanner.nextInt();
+
+	            System.out.println(Math.abs(temp) < Math.abs(closestTemp));
+	            System.out.println(Math.abs(temp) == Math.abs(closestTemp));
+	            System.out.println(temp > 0);
+	            
+	            if (Math.abs(temp) < Math.abs(closestTemp) ||
+	                    (Math.abs(temp) == Math.abs(closestTemp) && temp > 0)) {
+	                closestTemp = temp;
+	            }
+	        }
+
+	        if (closestTemp == Integer.MAX_VALUE) {
+	            System.out.println("No temperatures entered.");
+	        } else {
+	            System.out.println("The temperature closest to zero is: " + closestTemp);
+	        }
+
+	        scanner.close();
+	}
+
+}
